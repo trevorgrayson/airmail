@@ -1,5 +1,8 @@
-# airmail
-Incoming Email Router
+# Airmail
+Incoming Email Router.  Bringing you from SMTP text format straight through routing to a ruby controller. 
+This project is looking to give you the tools to classify and handle incoming emails.
+
+Set up routes, much like you would in Ruby on Rails.  Perhaps in /config/mail_routes.rb?
 
     Airmail.route do
       deliver AttachmentController if has_attachment?
@@ -7,7 +10,7 @@ Incoming Email Router
       deliver DefaultEmailController
     end
 
-Controller can look like
+A controller can look like:
 
     class DefaultEmailController < Airmail::Controller
       def receive
