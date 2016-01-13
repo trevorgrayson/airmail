@@ -6,9 +6,7 @@ module Airmail
       raise RoutesNotDefined unless defined? @@route
 
       mail = Mail.new( original )     
-      processor = MailProcessor.new(mail, @@route, original)
-      processor.before_receive if processor.respond_to? :before_receive
-      processor.receive
+      MailProcessor.new(mail, @@route, original).receive
 
       mail
     end

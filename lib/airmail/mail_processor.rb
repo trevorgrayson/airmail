@@ -12,7 +12,9 @@ class MailProcessor
     self.instance_eval(&@route)
 
     @delivering_controller ||= AirmailDefaultController
-    @delivering_controller.new(@mail, @raw_mail).receive
+    controller = @delivering_controller.new(@mail, @raw_mail)
+    controller.before_receive if controller.respond_to? :before_receive
+    controller.receive
   end
 
   def from? *args
