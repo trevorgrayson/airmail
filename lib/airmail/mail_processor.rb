@@ -12,7 +12,7 @@ class MailProcessor
     self.instance_eval(&@route)
 
     @delivering_controller ||= AirmailDefaultController
-    @delivering_controller.new(@mail).receive
+    @delivering_controller.new(@mail, @raw_mail).receive
   end
 
   def from? *args

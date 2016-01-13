@@ -1,7 +1,8 @@
 module Airmail
   class Controller
-    def initialize(mail)
+    def initialize(mail, raw_mail)
       @mail = mail
+      @raw_mail = raw_mail
     end
 
     def from
