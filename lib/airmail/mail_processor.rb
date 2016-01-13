@@ -1,7 +1,8 @@
 class MailProcessor 
 
-  def initialize mail, route
+  def initialize mail, route, original=nil
     @mail = mail
+    @raw_mail = original
     @route = route
     default_controller
   end

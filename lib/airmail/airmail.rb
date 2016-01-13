@@ -6,7 +6,9 @@ module Airmail
       raise RoutesNotDefined unless defined? @@route
 
       mail = Mail.new( original )     
-      MailProcessor.new(mail, @@route).receive
+      processor = MailProcessor.new(mail, @@route, original)
+      processor.before_receive if processor.respond_to? :before_receive
+      processor.receive
 
       mail
     end
@@ -20,7 +22,7 @@ module Airmail
     end
 
     def logger
-      defined?(@@logger) ? @@logger : Logger.new("log/airmail.log")
+      defined?(@@logger) ? @@logger : Logger.new("airmail.log")
     end
 
   end
