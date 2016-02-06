@@ -25,6 +25,17 @@ class MailProcessor
     @mail.attachments.size > 0
   end
 
+  #poor mans sentiment analyzer
+  def sentiment *phrase
+    analizer = Sentiment.new(phrase)
+    !!analizer.analyze(@mail.body.raw_source)
+  end
+
+  def or_regex(phrase)
+    return "[#{phrase.join("|")}]" if phrase.is_a? Array
+    phrase
+  end
+
   def deliver controller
     @delivering_controller ||= controller
   end

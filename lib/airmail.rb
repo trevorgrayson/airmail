@@ -5,3 +5,5 @@ require 'airmail/mail_controller'
 require 'airmail/airmail_default_controller'
 require 'airmail/airmail' #tmp
 
+require 'airmail/sentiment'
+require 'airmail/patterns'
