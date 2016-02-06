@@ -27,7 +27,7 @@ class MailProcessor
 
   #poor mans sentiment analyzer
   def sentiment *phrase
-    analizer = Sentiment.new(phrase)
+    analizer = Airmail::Sentiment.new(phrase)
     !!analizer.analyze(@mail.body.raw_source)
   end
 

@@ -1,4 +1,5 @@
 require File.expand_path('../../lib/airmail', __FILE__)
+require File.expand_path('../fixtures/mail_controllers', __FILE__)
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
