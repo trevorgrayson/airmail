@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'airmail'
-  s.version     = '0.5.0'
+  s.version     = '0.6.0'
   s.licenses    = ['MIT']
   s.summary     = "Incoming Email Router"
   s.description = "Incoming Email Router"

@@ -30,3 +30,11 @@ Then receive emails!
     EOF
 
     Airmail.receive( mail )
+
+
+There is a poor man's implementation of a "sentiment analyzer." You can make some fuzzy logic to figure out 
+some actions. For instance if you wanted "action bob@thomas.com" to do trigger some "action."
+
+    Airmail.route do
+      deliver SomeActionController if sentiment "action", Airmail::EMAIL_PATTERN
+    end
