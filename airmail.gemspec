@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
   s.files = Dir['Rakefile', '{bin,lib,spec}/**/*', 'README*', 'LICENSE*'] & `git ls-files -z`.split("\0")
   s.homepage    = 'https://rubygems.org/gems/airmail'
 
-  s.add_dependency('mail')
+  s.add_dependency('actionmailer')
   s.add_development_dependency('rspec', [">= 2.0.0"])
 end
