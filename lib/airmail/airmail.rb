@@ -1,18 +1,29 @@
+require 'active_support'
 require 'mail'
+require 'action_mailer'
+
 
 module Airmail
   class << self
     def receive( original )
       raise RoutesNotDefined unless defined? @@route
 
-      mail = Mail.new( original )     
+      mail = self.parse( original )
       MailProcessor.new(mail, @@route, original).receive
 
       mail
     end
 
+    def parse(msg)
+      Mail.new(msg)
+    end
+
     def route(&route)
       @@route = route
+    end
+
+    def get_route
+      @@route
     end
 
     def logger= logr

@@ -1,4 +1,3 @@
-require 'mail'
 class MailRouter
 
   def initialize(mail)
@@ -43,7 +42,7 @@ class MailRouter
   class << self
 
     def receive( original )
-      mail = Mail.new( original )     
+      mail = Mail::Message.new( original )     
 
       record(mail, original)
       self.new(mail).route

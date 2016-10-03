@@ -1,0 +1,63 @@
+Delivered-To: rovertus@gmail.com
+Received: by 10.79.138.196 with SMTP id m187csp883915ivd;
+        Sat, 1 Oct 2016 09:53:24 -0700 (PDT)
+X-Received: by 10.28.92.71 with SMTP id q68mr2644068wmb.85.1475340804141;
+        Sat, 01 Oct 2016 09:53:24 -0700 (PDT)
+Return-Path: <trevor+caf_=rovertus=gmail.com@trevorgrayson.com>
+Received: from mail-wm0-x233.google.com (mail-wm0-x233.google.com. [2a00:1450:400c:c09::233])
+        by mx.google.com with ESMTPS id h88si4915435wmi.137.2016.10.01.09.53.23
+        for <rovertus@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 01 Oct 2016 09:53:24 -0700 (PDT)
+Received-SPF: neutral (google.com: 2a00:1450:400c:c09::233 is neither permitted nor denied by best guess record for domain of trevor+caf_=rovertus=gmail.com@trevorgrayson.com) client-ip=2a00:1450:400c:c09::233;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@paypal.com;
+       spf=neutral (google.com: 2a00:1450:400c:c09::233 is neither permitted nor denied by best guess record for domain of trevor+caf_=rovertus=gmail.com@trevorgrayson.com) smtp.mailfrom=trevor+caf_=rovertus=gmail.com@trevorgrayson.com;
+       dmarc=pass (p=REJECT dis=NONE) header.from=paypal.com
+Received: by mail-wm0-x233.google.com with SMTP id p138so28291501wmb.1
+        for <rovertus@gmail.com>; Sat, 01 Oct 2016 09:53:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:delivered-to:dkim-signature:date:message-id
+         :amq-delivery-message-id:pp-correlation-id:subject:to:from
+         :mime-version;
+        bh=QUauXO7cvk7J90sDu+23Mepq6ifLLZjUj+cFpZqh6OM=;
+        b=EbPbYORqek10ksH5k4SJgnpUayiocTVDryXpSB4U6Eg1P+KbUjwhp+4Nvb+04cQC8h
+         XpkfOhwxJIDiGstJ0/HqdjBUuGzyEPgOth1tPgV6iwbKEPsop+JXZyPeuAPPf5gsmvCl
+         wSnbBy2NcogaXLzbrr9diKgdTe1aDRKBRYwMb0IyrEst89xzegk1O2BW2ep2nC8LQ3fv
+         K/i/VSaw/EuVVh0e8isnDjJIkUAryPwg5PU1ESlCUpTPjeeWau0o/DNdKemeW2s+FCXd
+         2T53ttuz4t95SK/yHi4H4KxFkJ4D3Gg/9rEegTIVMIzbkTMdJDyUbSIvepZvGUDFqPOn
+         Secg==
+X-Gm-Message-State: AA6/9RmQTlbDNSr35QjSBG0PDscVZFGairlfizu2xmOQFP4eGv4oyktVSgNlnudxtpFyyHbrskFzSOhYIWpyD49HX0OGft8=
+X-Received: by 10.28.23.18 with SMTP id 18mr2680718wmx.100.1475340803642;
+        Sat, 01 Oct 2016 09:53:23 -0700 (PDT)
+X-Forwarded-To: rovertus@gmail.com
+X-Forwarded-For: trevor@trevorgrayson.com rovertus@gmail.com
+Delivered-To: trevor@trevorgrayson.com
+Received: by 10.28.221.70 with SMTP id u67csp715650wmg;
+        Sat, 1 Oct 2016 09:53:22 -0700 (PDT)
+X-Received: by 10.66.49.39 with SMTP id r7mr22504256pan.100.1475340802526;
+        Sat, 01 Oct 2016 09:53:22 -0700 (PDT)
+Return-Path: <service@paypal.com>
+Received: from mx0.slc.paypal.com (mx2.slc.paypal.com. [173.0.84.227])
+        by mx.google.com with ESMTPS id 4si16734948paj.264.2016.10.01.09.53.21
+        for <trevor@trevorgrayson.com>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Sat, 01 Oct 2016 09:53:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of service@paypal.com designates 173.0.84.227 as permitted sender) client-ip=173.0.84.227;
+DKIM-Signature: v=1; a=rsa-sha256; d=paypal.com; s=pp-dkim1; c=relaxed/relaxed; q=dns/txt; i=@paypal.com; t=1475340801; h=From:From:Subject:Date:To:MIME-Version:Content-Type; bh=QUauXO7cvk7J90sDu+23Mepq6ifLLZjUj+cFpZqh6OM=; b=J31r2YJbKsHGQQzt3sFvqELSsue/qlvwPLqxEXl96VC7ohLISxXzv2pShqC5qClc 9+S8rMEqAs7nt8mRAx4ru4jbOoy7ChM55lw1KvuobL3cHdKKJWPlSu5xQv0I9S5d h+feRsMrI6lfQ+G64VE7GRij/djwYo31pvydj+IBQ8Xfc5K13YOIK0Qm7f3eNmR8 JcAuZqhGvEr7a8P7RNMakc3qyruZ0924iLzt6Mlh4lPd6BiQoifIe2sYYk1UNV74 pW7pDmIq6gbK3TksF/QtmOqp0xUhfrchgYF567oouO0ts/mvxlxUwo9ZIo4qrEbj vgbKGosdgzKcjOKygtmYfg==;
+Received: (qmail 27756 invoked by uid 993); 1 Oct 2016 16:53:21 -0000
+Date: Sat, 01 Oct 2016 09:53:21 -0700
+Message-Id: <1475340801.27756@paypal.com>
+AMQ-Delivery-Message-Id: EMAILDELIVERY-Notification_EmailDeliveryEvent-15-1475340795802-3489539719
+X-PP-Email-transmission-Id: 8bef3ede-87f7-11e6-8d07-8cdcd4b6ee30
+PP-Correlation-Id: ee84b5202279c
+Subject: Receipt for Your Payment to Yukaholics, Inc.
+X-MaxCode-Template: xpt/xclick/ReceiptXClickPayment
+To: Trevor Grayson <trevor@trevorgrayson.com>
+From: "service@paypal.com" <service@paypal.com>
+X-Email-Type-Id: PP120 - ee84b5202279c
+X-XPT-XSL-Name: email_pimp/default/en_US/xclick/ReceiptXClickPayment.xsl
+Content-Type: multipart/alternative; boundary=--NextPart_048F8BC8A2197DE2036A
+MIME-Version: 1.0
+:
