@@ -1,6 +1,7 @@
 require 'active_support'
 require 'mail'
 require 'action_mailer'
+require 'action_mailer/base'
 
 
 module Airmail
@@ -15,7 +16,7 @@ module Airmail
     end
 
     def parse(msg)
-      Mail.new(msg)
+      ::Mail::Message.new(msg)
     end
 
     def route(&route)
